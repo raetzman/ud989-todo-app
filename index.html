@@ -26,7 +26,8 @@
 		<script type="text/template" id="item-template">
 			<div class="view">
 				<input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
-				<label><%- title %></label>
+				<label><%- title %><%= completed ? ' --done!' : '' %></label>
+				<button class="edit-btn"></button>
 				<button class="destroy"></button>
 			</div>
 			<input class="edit" value="<%- title %>">
@@ -49,10 +50,14 @@
 			<% } %>
 		</script>
 		<script src="bower_components/todomvc-common/base.js"></script>
+		// Common TodoMVC utilities used by our apps from Node Package Manager
 		<script src="bower_components/jquery/jquery.js"></script>
+		// jQuery
 		<script src="bower_components/underscore/underscore.js"></script>
+		// Underscore is a JavaScript library that provides a whole mess of useful functional programming helpers without extending any built-in objects.
 		<script src="bower_components/backbone/backbone.js"></script>
 		<script src="bower_components/backbone.localStorage/backbone.localStorage.js"></script>
+		// Backbone.js gives structure to web applications by providing models with key-value binding and custom events, collections with a rich API of enumerable functions, views with declarative event handling, and connects it all to your existing API over a RESTful JSON interface.
 		<script src="js/models/todo.js"></script>
 		<script src="js/collections/todos.js"></script>
 		<script src="js/views/todo-view.js"></script>

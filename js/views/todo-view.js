@@ -22,7 +22,8 @@ var app = app || {};
 			'click .destroy': 'clear',
 			'keypress .edit': 'updateOnEnter',
 			'keydown .edit': 'revertOnEscape',
-			'blur .edit': 'close'
+			'blur .edit': 'close',
+			'click .edit-btn': 'editByPen'
 		},
 
 		// The TodoView listens for changes to its model, re-rendering. Since
@@ -74,6 +75,11 @@ var app = app || {};
 		edit: function () {
 			this.$el.addClass('editing');
 			this.$input.focus();
+		},
+		editByPen: function () {
+			this.$el.addClass('editing');
+			this.$input.focus();
+			this.$input.select();
 		},
 
 		// Close the `"editing"` mode, saving changes to the todo.
